@@ -1,0 +1,90 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&display=swap" rel="stylesheet">
+  <script src="index.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <header>
+    <div class="site-logo">
+      &#128221; <span class="site-name">ToDo List</span>
+    </div>
+  </header>
+  <main>
+
+    <div id="task-box">
+      <div class="task" draggable="true">
+        <span class="task__name">
+          Learn CSS
+        </span>
+        <span class="task__description">
+          <p>
+            I need to learn flexbox and grid.
+          </p>
+        </span>
+        <span class="task__deadline">
+          20/05/2020
+        </span>
+      </div>
+
+      <div class="task" draggable="true">
+        <span class="task__name">
+          Learn HTML
+        </span>
+        <span class="task__description">
+          I need to learn semantic markup.
+        </span>
+        <span class="task__deadline">
+          20/05/2020
+        </span>
+      </div>
+
+      <div class="task" draggable="true">
+        <span class="task__name">
+          Keep calm
+        </span>
+        <span class="task__description">
+          I need to do yoga and meditation.
+        </span>
+        <span class="task__deadline">
+          20/05/2020
+        </span>
+      </div>
+
+    </div>
+  </main>
+  <nav>
+    <div class="todo-list">
+      <div class="todo-list__header">
+        Tasks for today
+      </div>
+      <div class="todo-list__task">
+        <div class="checkbox-container">
+          <label class="checkbox-label">
+              <input type="checkbox">
+              <span class="checkbox-custom"></span>
+          </label>
+          <div class="todo-list__task-name">Learn JS</div>
+        </div>
+      </div>
+      <div class="todo-list__task">
+        <div class="checkbox-container">
+          <label class="checkbox-label">
+              <input type="checkbox">
+              <span class="checkbox-custom"></span>
+          </label>
+          <div class="todo-list__task-name">Create markup</div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <footer>
+    <div class="copy">
+      2020 &copy; ToDo List
+    </div>
+  </footer>
+</body>
+</html>

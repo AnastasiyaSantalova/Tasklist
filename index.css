@@ -1,0 +1,290 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Baloo Tamma 2', cursive;
+}
+
+body {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 80px 5fr 50px;
+  grid-template-areas: "h h"
+                       "m n"
+                       "f f";
+}
+
+header {
+  grid-area: h;
+  display: flex;
+  align-items: center;
+
+  color: #ffffff;
+  background-color: #748484;
+}
+
+footer {
+  grid-area: f;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #ffffff;
+  background-color: #748484;
+}
+
+main {
+  grid-area: m;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav {
+  grid-area: n;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.site-logo {
+  margin-left: 1rem;
+  font-size: 2rem;
+}
+
+.site-name {
+  font-weight: bold;
+}
+
+/* Tasks Styling */
+
+#task-box {
+  width: 90%;
+  height: 90%;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.task {
+  height: 150px;
+  width: 150px;
+
+  margin: 15px;
+
+  border: 1px solid #EAE7E4;
+  border-radius: 10px;
+  overflow: hidden;
+
+  color: #B27955;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.task:hover {
+  border: 1px solid #E2C7C0;
+}
+
+.task:hover .task__name {
+  color: #ffffff;
+  background-color: #E2C7C0;
+}
+
+.task:hover .task__deadline {
+  border-top: 1px solid #E2C7C0;
+}
+
+.task__name {
+  color: #748484;
+  background-color: #EAE7E4;
+
+  min-height: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.task__description {
+  padding: 0 10px;
+}
+
+.task__deadline {
+  padding: 0 10px;
+  text-align: right;
+  border-top: 1px solid #EAE7E4;
+}
+
+/* ToDo List Styling */
+
+.todo-list {
+  width: 90%;
+  height: 90%;
+  border: 2px solid #748484;
+  border-radius: 10px;
+  background-color: #E2C7C0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.todo-list__header {
+  height: 50px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-list__task {
+  position: relative;
+  margin: 0 10px;
+  padding: 5px 0;
+  height: 25px;
+  border-top: 1px solid #ffffff;
+}
+
+.todo-list__task-name {
+  position: absolute;
+  left: 30px;
+
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #748484;
+}
+
+/* checkbox styling */
+
+.checkbox-container {
+  position: relative;
+}
+
+.checkbox__custom {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 20px;
+  width: 20px;
+
+  background-color: transparent;
+  border-radius: 5px;
+  border: 2px solid #ffffff;
+}
+
+.checkbox-label {
+  position: relative;
+  cursor: pointer;
+  font-size: 22px;
+  line-height: 24px;
+  height: 20px;
+  width: 20px;
+  clear: both;
+}
+
+.checkbox-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkbox-label .checkbox-custom {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 20px;
+  width: 20px;
+  background-color: transparent;
+  border-radius: 5px;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  border: 2px solid #FFFFFF;
+}
+
+.checkbox-label input:checked ~ .checkbox-custom {
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  -webkit-transform: rotate(0deg) scale(1);
+  -ms-transform: rotate(0deg) scale(1);
+  transform: rotate(0deg) scale(1);
+  opacity:1;
+  border: 2px solid #FFFFFF;
+}
+
+.checkbox-label .checkbox-custom::after {
+  position: absolute;
+  content: "";
+  left: 10px;
+  top: 10px;
+  height: 0px;
+  width: 0px;
+  border-radius: 5px;
+  border: solid #E2C7C0;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(0deg) scale(0);
+  -ms-transform: rotate(0deg) scale(0);
+  transform: rotate(0deg) scale(0);
+  opacity:1;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+
+.checkbox-label input:checked ~ .checkbox-custom::after {
+-webkit-transform: rotate(45deg) scale(1);
+-ms-transform: rotate(45deg) scale(1);
+transform: rotate(45deg) scale(1);
+opacity:1;
+left: 7px;
+top: 2px;
+width: 5px;
+height: 10px;
+border: solid #E2C7C0;
+border-width: 0 2px 2px 0;
+background-color: transparent;
+border-radius: 0;
+}
+
+/* For Ripple Effect */
+
+.checkbox-label .checkbox-custom::before {
+  position: absolute;
+  content: "";
+  left: 10px;
+  top: 10px;
+  width: 0px;
+  height: 0px;
+  border-radius: 5px;
+  border: 2px solid #FFFFFF;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);    
+}
+
+.checkbox-label input:checked ~ .checkbox-custom::before {
+  border-radius: 5px;
+  -webkit-transform: scale(3);
+  -ms-transform: scale(3);
+  transform: scale(3);
+  opacity:0;
+  z-index: 999;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
